@@ -1,17 +1,18 @@
 import Navbar from "@/components/Navbar";
-import { Outfit } from "next/font/google";
+import { Outfit, Space_Grotesk } from "next/font/google";
 
 const outfit = Outfit({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: "700" });
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-full font-sans overflow-hidden">
+    <main className="relative min-h-screen w-full font-sans overflow-hidden selection:bg-green-400/40 selection:text-white">
       {/* Navbar overlaying the background */}
       <Navbar />
 
       {/* Hero Section Container with Full-Screen Background Image */}
       <div
-        className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex flex-col justify-center"
+        className="relative w-full min-h-[100dvh] bg-cover bg-center bg-no-repeat flex flex-col"
         style={{
           backgroundImage: "url('/image.png')"
         }}
@@ -20,12 +21,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
         {/* Hero Content aligned to the left */}
-        <div className={`relative z-10 w-full max-w-7xl mx-auto px-8 md:px-16 lg:px-24 ${outfit.className}`}>
-          <div className="max-w-2xl text-white mt-8 md:mt-0">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium leading-[1.1] tracking-tight mb-6">
+        <div className={`relative z-10 flex-1 flex flex-col justify-center w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 pt-24 pb-12 ${outfit.className}`}>
+          <div className="max-w-3xl text-white mt-8 md:mt-0">
+            <h1 className={`text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.1] tracking-tighter mb-10 drop-shadow-xl ${spaceGrotesk.className}`}>
               Focus on what matters most.
             </h1>
-            <p className="text-base sm:text-lg text-white/90 max-w-md mb-8 font-light tracking-wide leading-relaxed">
+            <p className="text-lg sm:text-xl text-white max-w-xl mb-12 font-normal tracking-wide leading-relaxed drop-shadow-md">
               Automate the repetitive tasks and let your team focus on breakthrough ideas. Scalable AI solutions at your fingertips.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -40,9 +41,9 @@ export default function Home() {
         </div>
 
         {/* Footer / Logos at the bottom */}
-        <div className="absolute bottom-10 left-0 w-full px-8 md:px-16 lg:px-24 z-10">
+        <div className="relative z-10 w-full px-6 md:px-16 lg:px-24 pb-8 mt-auto">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14 opacity-90">
+            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 opacity-90">
               {/* Dummy Logos similar to reference layout */}
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 border-[2px] border-white rounded-md"></div>
